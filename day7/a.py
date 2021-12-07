@@ -50,6 +50,8 @@ while len(done) < len(T):
             elif op=='RSHIFT':
                 R[t]=termz[0] >> termz[1]
             elif op=='NOT':
+                # forces number to 16 bit unsigned otherwise
+                # you end up with negative 8bit number.
                 R[t]=~termz[0] & 65535
             else:
                 R[t]=termz[0]
